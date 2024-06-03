@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/header1.css' %}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <a href="{% url 'home' %}"><i class="fa fa-fw fa-home"></i>หน้าแรก</a>
+            <a href="{% url 'products' %}"><i class="fi fi-rr-shopping-cart"></i>สินค้า</a>
+            <a href="{% url 'contag' %}"><i class="fa fa-fw fa-envelope"></i>ช่องทางการติดต่อ</a>
+            <a href="{% url 'payments' %}"><i class="fi fi-rr-credit-card">วิธีการชำระเงิน</i></a>
+            {% if user.is_authenticated %}
+            <a href="/chat"><i class="fi fi-ts-messages"></i></i>แชท</a>
+            {% endif %}
+        </div>
+    </header>
+</body>
+</html>
+
